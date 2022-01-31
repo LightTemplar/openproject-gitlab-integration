@@ -34,6 +34,7 @@ require_relative './notification_handlers'
 require_relative './hook_handler'
 require_relative './services'
 require_relative '../../../app/workers/cron/clear_old_merge_requests_job'
+require_relative '../../../lib/api/v3/gitlab_merge_requests/gitlab_merge_requests_by_work_package_api
 
 module OpenProject::GitlabIntegration
   class Engine < ::Rails::Engine
