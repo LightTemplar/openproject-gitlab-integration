@@ -33,6 +33,7 @@ require_relative './patches/api/work_package_representer'
 require_relative './notification_handlers'
 require_relative './hook_handler'
 require_relative './services'
+require_relative '../../../app/workers/cron/clear_old_merge_requests_job'
 
 module OpenProject::GitlabIntegration
   class Engine < ::Rails::Engine
@@ -93,7 +94,7 @@ module OpenProject::GitlabIntegration
 
     config.to_prepare do
       # Register the cron job to clean up old gitlab merge requests
-      # ::Cron::CronJob.register! ::Cron::ClearOldMergeRequestsJob
+      ::Cron::CronJob.register! ::Cron::ClearOldMergeRequestsJob
     end
 
   end
