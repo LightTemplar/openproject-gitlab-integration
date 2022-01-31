@@ -30,7 +30,7 @@
 #++
 
 module Cron
-  class ClearOldMergeRequestsJob < CronJob
+  class ClearOldMergeRequestsJob < ::Cron::CronJob
     priority_number :low
 
     # runs at 1:25 nightly
