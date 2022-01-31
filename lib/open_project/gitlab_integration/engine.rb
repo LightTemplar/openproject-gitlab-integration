@@ -93,7 +93,7 @@ module OpenProject::GitlabIntegration
 
     config.to_prepare do
       # Register the cron job to clean up old gitlab merge requests
-      ::Cron::CronJob.register! ::Cron::ClearOldMergeRequestsJob
+      # ::Cron::CronJob.register! ::Cron::ClearOldMergeRequestsJob
     end
 
   end
