@@ -29,16 +29,16 @@
 # See docs/COPYRIGHT.rdoc for more details.
 #++
 
-module Cron
-  class ClearOldMergeRequestsJob < ::Cron::CronJob
-    priority_number :low
+# module Cron
+#   class ClearOldMergeRequestsJob < ::Cron::CronJob
+#     priority_number :low
 
-    # runs at 1:25 nightly
-    self.cron_expression = '25 1 * * *'
+#     # runs at 1:25 nightly
+#     self.cron_expression = '25 1 * * *'
 
-    def perform
-      GitlabMergeRequest.without_work_package
-                       .find_each(&:destroy!)
-    end
-  end
-end
+#     def perform
+#       GitlabMergeRequest.without_work_package
+#                        .find_each(&:destroy!)
+#     end
+#   end
+# end
